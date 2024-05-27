@@ -1,10 +1,26 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Button, SafeAreaView, StyleSheet} from 'react-native';
 
-export default function LandingScreen() {
+export default function LandingScreen({navigation}) {
   return (
-    <View>
-      <Text>LandingScreen</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Button
+        title="SJHC (Official)"
+        onPress={() => navigation.navigate('OfficialMainScreen')}
+      />
+      <Button
+        title="Personal"
+        onPress={() => navigation.navigate('PersonalMainScreen')}
+      />
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    rowGap: 20,
+    justifyContent: 'center',
+    padding: 20,
+  },
+});
