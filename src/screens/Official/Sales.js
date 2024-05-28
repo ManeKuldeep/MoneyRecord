@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 
-export default function SalesScreen() {
+export default function SalesScreen({navigation}) {
   const data = [
     {
       date: '23 June 2024',
@@ -30,6 +30,13 @@ export default function SalesScreen() {
   ];
   return (
     <View style={styles.container}>
+      <Pressable
+        style={styles.button}
+        onPress={() => {
+          navigation.navigate('NewSaleScreen');
+        }}>
+        <Text>Add New Entry</Text>
+      </Pressable>
       {data.map(element => {
         return (
           <View style={styles.card}>
@@ -92,6 +99,7 @@ export default function SalesScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 10,
   },
   card: {
     backgroundColor: 'white',
@@ -106,7 +114,6 @@ const styles = StyleSheet.create({
     elevation: 14,
     justifyContent: 'center',
     padding: 5,
-    marginHorizontal: 10,
     marginVertical: 10,
   },
   header: {
@@ -125,5 +132,13 @@ const styles = StyleSheet.create({
   },
   label: {
     fontWeight: 'bold',
+  },
+  button: {
+    flexDirection: 'row',
+    borderRadius: 15,
+    backgroundColor: 'cyan',
+    elevation: 14,
+    justifyContent: 'center',
+    paddingVertical: 10,
   },
 });

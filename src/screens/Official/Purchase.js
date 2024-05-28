@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 
 export default function PurchaseScreen() {
   const data = [
@@ -30,6 +30,13 @@ export default function PurchaseScreen() {
   ];
   return (
     <View style={styles.container}>
+      <Pressable
+        style={styles.button}
+        onPress={() => {
+          navigation.navigate('NewSaleScreen');
+        }}>
+        <Text>Add New Entry</Text>
+      </Pressable>
       {data.map(element => {
         return (
           <View style={styles.card}>
@@ -125,5 +132,13 @@ const styles = StyleSheet.create({
   },
   label: {
     fontWeight: 'bold',
+  },
+  button: {
+    flexDirection: 'row',
+    borderRadius: 15,
+    backgroundColor: 'cyan',
+    elevation: 14,
+    justifyContent: 'center',
+    paddingVertical: 10,
   },
 });
