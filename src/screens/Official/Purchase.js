@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 
-export default function PurchaseScreen() {
+export default function PurchaseScreen({navigation}) {
   const data = [
     {
       date: '23 June 2024',
