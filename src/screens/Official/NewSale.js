@@ -69,6 +69,7 @@ export default function NewSaleScreen({navigation}) {
                 onCancel={() => {
                   setOpen(false);
                 }}
+                mode="date"
               />
               <Text style={styles.label}>Particular</Text>
               <TextInput
@@ -77,6 +78,13 @@ export default function NewSaleScreen({navigation}) {
                 onBlur={handleBlur('particular')}
                 value={values.particular}
               />
+              <Text style={styles.label}>Bill No</Text>
+              <TextInput
+                style={styles.textInput}
+                onChangeText={handleChange('billNo')}
+                onBlur={handleBlur('billNo')}
+                value={values.billNo}
+              />
               <Text style={styles.label}>Amount</Text>
               <TextInput
                 style={styles.textInput}
@@ -84,13 +92,6 @@ export default function NewSaleScreen({navigation}) {
                 onBlur={handleBlur('amount')}
                 value={values.amount}
                 keyboardType="number-pad"
-              />
-              <Text style={styles.label}>Bill No</Text>
-              <TextInput
-                style={styles.textInput}
-                onChangeText={handleChange('billNo')}
-                onBlur={handleBlur('billNo')}
-                value={values.billNo}
               />
               <Text style={styles.label}>GST</Text>
               <View style={{flexDirection: 'row'}}>

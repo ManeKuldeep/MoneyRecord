@@ -66,6 +66,7 @@ export default function NewStatementScreen({navigation}) {
                 onCancel={() => {
                   setOpen(false);
                 }}
+                mode="date"
               />
               <Text style={styles.label}>Particular</Text>
               <TextInput
